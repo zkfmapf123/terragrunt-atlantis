@@ -1,2 +1,7 @@
 .terraform
 terraform.tfstate
+
+vars.tfvars
+Makefile
+.terraform.lock.hcl
+terraform.tfstate.backup
