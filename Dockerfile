@@ -15,7 +15,7 @@ ENV ATLANTIS_REPO_ALLOWLIST=github.com/zkfmapf123/terragrunt-atlantis
 
 RUN mkdir -p /home/atlantis/.atlantis/bin \
     && chown -R atlantis:atlantis /home/atlantis/.atlantis
-
+COPY config/server.yaml /home/atlantis/.atlantis/server.yaml
 RUN chown -R atlantis:atlantis /home/atlantis/.atlantis
 
 USER atlantis
