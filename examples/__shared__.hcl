@@ -10,7 +10,10 @@ remote_state {
         bucket = "dk-state-bucket"
         key = "${path_relative_to_include()}/terraform.tfstate"
         region = "ap-northeast-2"
-        profile = "leedonggyu"
+        
+        assume_role = {
+            role_arn = "arn:aws:iam::182024812696:role/TerraformAssumedRole"
+        }
 
         encrypt = false
         skip_bucket_root_access=true
@@ -27,7 +30,10 @@ generate "provider" {
     contents = <<EOF
     provider "aws" {
         region = "ap-northeast-2"
-        profile = "leedonggyu"
+        
+        assume_role {
+            role_arn = "arn:aws:iam::182024812696:role/TerraformAssumedRole"
+        }
     }
     EOF
 }
